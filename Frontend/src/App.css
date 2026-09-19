@@ -393,3 +393,51 @@ input {
 .chat-form input:disabled {
   background: #f8f8f8;
 }
+
+
+/* ==================================================
+   CHAT CRUD ACTIONS
+================================================== */
+
+.chat-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+.chat-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex: 1;
+    min-width: 0;
+    cursor: pointer;
+}
+
+.chat-title span:last-child {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.chat-actions {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+}
+
+.chat-action-btn {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    padding: 4px;
+    font-size: 13px;
+    opacity: 0.65;
+    transition: 0.2s ease;
+}
+
+.chat-action-btn:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}

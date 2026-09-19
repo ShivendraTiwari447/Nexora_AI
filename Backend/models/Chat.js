@@ -1,39 +1,45 @@
 const mongoose = require("mongoose");
 
-const messageSchema = new mongoose.Schema(
-  {
-    role: {
-      type: String,
-      enum: ["user", "ai"],
-      required: true,
-    },
+// ================= MESSAGE SCHEMA =================
 
-    text: {
-      type: String,
-      required: true,
+const messageSchema = new mongoose.Schema(
+    {
+        role: {
+            type: String,
+            enum: ["user", "ai"],
+            required: true,
+        },
+
+        text: {
+            type: String,
+            required: true,
+        },
     },
-  },
-  {
-    _id: false,
-  }
+    {
+        _id: false,
+    }
 );
+
+// ================= CHAT SCHEMA =================
 
 const chatSchema = new mongoose.Schema(
-  {
-    title: {
-      type: String,
-      default: "New Chat",
-    },
+    {
+        title: {
+            type: String,
+            default: "New Chat",
+        },
 
-    messages: {
-      type: [messageSchema],
-      default: [],
+        messages: {
+            type: [messageSchema],
+            default: [],
+        },
     },
-  },
-  {
-    timestamps: true,
-  }
+    {
+        timestamps: true,
+    }
 );
+
+// ================= MODEL =================
 
 const Chat = mongoose.model("Chat", chatSchema);
 
